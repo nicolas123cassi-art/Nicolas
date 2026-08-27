@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MozaMercado - O seu Marketplace Moçambicano</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-black text-orange-600"><i class="fa-solid fa-store"></i> Moza<span class="text-green-600">Mercado</span></span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6 font-medium">
+                <button onclick="mudarSecao('catalogo')" class="text-orange-600 hover:text-orange-700 transition">Início & Produtos</button>
+                <button onclick="mudarSecao('lojas')" class="hover:text-orange-600 transition">Lojas Parceiras</button>
+                <button onclick="mudarSecao('cadastro')" class="hover:text-orange-600 transition">Cadastro</button>
+                <button onclick="mudarSecao('entregador')" class="hover:text-orange-600 transition text-green-700 font-semibold"><i class="fa-solid fa-motorcycle"></i> Área do Entregador</button>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="mudarSecao('cadastro')" class="bg-orange-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-orange-700 transition shadow">Criar Conta</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Dinâmico -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- SEÇÃO 1: CATÁLOGO DE PRODUTOS E LOJAS -->
+        <section id="secao-catalogo" class="space-y-8">
+            <!-- Banner Principal -->
+            <div class="bg-gradient-to-r from-orange-500 to-amber-600 rounded-2xl p-8 text-white shadow-lg flex flex-col md:flex-row justify-between items-center">
+                <div class="space-y-4 max-w-xl">
+                    <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Feito em Moçambique</span>
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight">Compre de lojas locais com entrega rápida.</h1>
+                    <p class="text-orange-100">Encontre eletrónicos, moda, alimentação e muito mais de diferentes vendedores em Beira, Maputo e todo o país.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <div class="bg-white p-4 rounded-xl shadow text-gray-800 w-72">
+                        <p class="font-bold text-sm text-gray-500 mb-2"><i class="fa-solid fa-location-dot text-red-500"></i> Sua Localização</p>
+                        <select class="w-full border rounded-lg p-2 text-sm bg-gray-50 font-medium">
+                            <option>Beira (Sofala)</option>
+                            <option>Maputo (Cidade)</option>
+                            <option>Nampula</option>
+                            <option>Quelimane</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produtos em Destaque -->
+            <div>
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold">Produtos em Destaque</h2>
+                    <span class="text-sm text-gray-500">Vendedores Independentes</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Produto 1 -->
+                    <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 border border-gray-100">
+                        <div class="bg-gray-200 h-40 rounded-lg mb-4 flex items-center justify-center text-gray-400 font-bold">Imagem do Produto</div>
+                        <span class="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded">Loja: TechBeira</span>
+                        <h3 class="font-bold text-lg mt-1">Headset Gamer RGB</h3>
+                        <p class="text-green-600 font-extrabold text-lg mt-2">1.850 MT</p>
+                        <button class="w-full mt-3 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition">Comprar Agora</button>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 border border-gray-100">
+                        <div class="bg-gray-200 h-40 rounded-lg mb-4 flex items-center justify-center text-gray-400 font-bold">Imagem do Produto</div>
+                        <span class="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded">Loja: Moda Ndau</span>
+                        <h3 class="font-bold text-lg mt-1">Camisa com Estampa Uta</h3>
+                        <p class="text-green-600 font-extrabold text-lg mt-2">950 MT</p>
+                        <button class="w-full mt-3 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition">Comprar Agora</button>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 border border-gray-100">
+                        <div class="bg-gray-200 h-40 rounded-lg mb-4 flex items-center justify-center text-gray-400 font-bold">Imagem do Produto</div>
+                        <span class="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded">Loja: AgroMel</span>
+                        <h3 class="font-bold text-lg mt-1">Mel Puro Natural (1L)</h3>
+                        <p class="text-green-600 font-extrabold text-lg mt-2">450 MT</p>
+                        <button class="w-full mt-3 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition">Comprar Agora</button>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 border border-gray-100">
+                        <div class="bg-gray-200 h-40 rounded-lg mb-4 flex items-center justify-center text-gray-400 font-bold">Imagem do Produto</div>
+                        <span class="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded">Loja: Bazar Central</span>
+                        <h3 class="font-bold text-lg mt-1">Garrafa Térmica Inox</h3>
+                        <p class="text-green-600 font-extrabold text-lg mt-2">700 MT</p>
+                        <button class="w-full mt-3 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition">Comprar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: LOJAS PARCEIRAS -->
+        <section id="secao-lojas" class="hidden space-y-6">
+            <h2 class="text-2xl font-bold">Lojas Parceiras Independentes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl font-bold">TB</div>
+                    <div>
+                        <h3 class="font-bold text-lg">TechBeira Store</h3>
+                        <p class="text-sm text-gray-500">Eletrónicos e acessórios em Sofala.</p>
+                        <span class="text-xs text-green-600 font-semibold mt-1 block">● Aberto agora</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xl font-bold">MN</div>
+                    <div>
+                        <h3 class="font-bold text-lg">Moda Ndau Oficial</h3>
+                        <p class="text-sm text-gray-500">Vestuário e arte tradicional.</p>
+                        <span class="text-xs text-green-600 font-semibold mt-1 block">● Aberto agora</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-gray-100 flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl font-bold">AM</div>
+                    <div>
+                        <h3 class="font-bold text-lg">AgroMel Moçambique</h3>
+                        <p class="text-sm text-gray-500">Produtos naturais da terra.</p>
+                        <span class="text-xs text-green-600 font-semibold mt-1 block">● Aberto agora</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: CADASTRO DO CONSUMIDOR / LOJISTA -->
+        <section id="secao-cadastro" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 class="text-2xl font-bold mb-2">Criar Nova Conta</h2>
+            <p class="text-sm text-gray-500 mb-6">Cadastre-se como Consumidor ou registre a sua Loja/Vendedor.</p>
+            
+            <form onsubmit="alert('Cadastro realizado com sucesso!'); return false;" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Perfil</label>
+                    <select class="w-full border rounded-lg p-3 text-sm bg-gray-50">
+                        <option>Consumidor (Comprar produtos)</option>
+                        <option>Lojista / Vendedor (Vender produtos)</option>
+                        <option>Homem do Delivery (Fazer entregas)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome Completo / Nome do Negócio</label>
+                    <input type="text" required placeholder="Ex: Carlos Machel" class="w-full border rounded-lg p-3 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Número de Telemóvel (+258)</label>
+                    <input type="tel" required placeholder="84 / 85 XXX XXXX" class="w-full border rounded-lg p-3 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Palavra-passe</label>
+                    <input type="password" required placeholder="••••••••" class="w-full border rounded-lg p-3 text-sm">
+                </div>
+                <button type="submit" class="w-full bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-700 transition">Concluir Cadastro</button>
+            </form>
+        </section>
+
+        <!-- SEÇÃO 4: ÁREA DO ENTREGADOR (DELIVERY) -->
+        <section id="secao-entregador" class="hidden space-y-6">
+            <div class="bg-green-700 text-white p-6 rounded-xl shadow flex justify-between items-center">
+                <div>
+                    <h2 class="text-2xl font-bold">Painel do Entregador</h2>
+                    <p class="text-green-100 text-sm">Aceite pedidos de entrega próximos e ganhe comissão por rota.</p>
+                </div>
+                <div class="bg-white/10 px-4 py-2 rounded-lg text-right">
+                    <span class="block text-xs text-green-200">Ganhos do Dia</span>
+                    <span class="text-xl font-bold">1.450 MT</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow p-6 border border-gray-100">
+                <h3 class="font-bold text-lg mb-4">Entregas Disponíveis na sua Área</h3>
+                <div class="space-y-4">
+                    <div class="border border-gray-200 p-4 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">Pedido #4021</span>
+                            <h4 class="font-bold mt-1">Retirada: TechBeira Store → Entrega: Ponta-Gêa</h4>
+                            <p class="text-sm text-gray-500 mt-1">Taxa de entrega estimada: <strong class="text-gray-800">150 MT</strong></p>
+                        </div>
+                        <button onclick="alert('Entrega aceite com sucesso! Dirija-se à loja.')" class="bg-green-600 text-white px-5 py-2 rounded-lg font-bold hover:bg-green-700 transition text-sm whitespace-nowrap">Aceitar Entrega</button>
+                    </div>
+
+                    <div class="border border-gray-200 p-4 rounded-lg flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded font-bold">Pedido #4022</span>
+                            <h4 class="font-bold mt-1">Retirada: AgroMel → Entrega: Macuti</h4>
+                            <p class="text-sm text-gray-500 mt-1">Taxa de entrega estimada: <strong class="text-gray-800">200 MT</strong></p>
+                        </div>
+                        <button onclick="alert('Entrega aceite com sucesso! Dirija-se à loja.')" class="bg-green-600 text-white px-5 py-2 rounded-lg font-bold hover:bg-green-700 transition text-sm whitespace-nowrap">Aceitar Entrega</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-white border-t mt-16 py-8 text-center text-sm text-gray-500">
+        <p>&copy; 2026 MozaMercado. Todos os direitos reservados. Feito com HTML, CSS e JavaScript.</p>
+    </footer>
+
+    <!-- Lógica JavaScript para navegação por abas -->
+    <script>
+        function mudarSecao(secao) {
+            // Ocultar todas as seções
+            document.getElementById('secao-catalogo').classList.add('hidden');
+            document.getElementById('secao-lojas').classList.add('hidden');
+            document.getElementById('secao-cadastro').classList.add('hidden');
+            document.getElementById('secao-entregador').classList.add('hidden');
+
+            // Mostrar a seção selecionada
+            if (secao === 'catalogo') {
+                document.getElementById('secao-catalogo').classList.remove('hidden');
+            } else if (secao === 'lojas') {
+                document.getElementById('secao-lojas').classList.remove('hidden');
+            } else if (secao === 'cadastro') {
+                document.getElementById('secao-cadastro').classList.remove('hidden');
+            } else if (secao === 'entregador') {
+                document.getElementById('secao-entregador').classList.remove('hidden');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
